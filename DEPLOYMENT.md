@@ -54,9 +54,10 @@ Why:
 
 This repo already includes:
 - [vercel.json](./vercel.json)
-- [ci.yml](./.github/workflows/ci.yml)
 
 So the deployment path is already prepared.
+
+If you want GitHub Actions later, you can add a workflow after updating your GitHub token permissions to include workflow management.
 
 ## First Deployment Steps
 
