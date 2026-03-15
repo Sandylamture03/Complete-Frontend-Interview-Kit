@@ -18,6 +18,7 @@ export function SiteHeader() {
       <Link href="/" className="brand">
         <span className="brand-kicker">Frontend Interview Prep OS</span>
         <span className="brand-title">One place to learn, revise, practice, and answer well.</span>
+        <span className="brand-meta">Live study space: prep.ai-developer.in</span>
       </Link>
 
       <nav className="site-nav" aria-label="Primary">
