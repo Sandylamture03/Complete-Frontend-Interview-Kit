@@ -10,9 +10,19 @@ export function TrackCard({ summary }: TrackCardProps) {
   return (
     <article className="panel track-card">
       <div className="stack-sm">
-        <span className="pill">{summary.label}</span>
+        <div className="pill-row">
+          <span className="pill">{summary.label}</span>
+          <span className="pill muted">Beginner to expert</span>
+        </div>
         <h3>{summary.label}</h3>
         <p>{summary.description}</p>
+      </div>
+      <div className="tag-row">
+        {summary.priorityTopics.map((topic) => (
+          <span key={topic} className="tag">
+            {topic}
+          </span>
+        ))}
       </div>
       <div className="split stat-row">
         <span>{summary.topicCount} curated topics</span>

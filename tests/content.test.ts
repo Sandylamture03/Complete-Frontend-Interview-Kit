@@ -62,6 +62,24 @@ describe("content layer", () => {
     ).toBe(true);
   });
 
+  it("deepens thinner tracks with multi-topic interview coverage", () => {
+    const thinnerTracks = [
+      "browser",
+      "accessibility",
+      "performance-security",
+      "dsa",
+      "machine-coding",
+      "system-design",
+      "resume-behavioral",
+    ] as const;
+
+    thinnerTracks.forEach((track) => {
+      const bank = getInterviewBankByTrack(track);
+      expect(bank.topicCount).toBeGreaterThanOrEqual(2);
+      expect(bank.totalQuestions).toBeGreaterThanOrEqual(12);
+    });
+  });
+
   it("ships a question bank with follow-ups", () => {
     const questions = getAllQuestions();
     expect(questions.length).toBeGreaterThan(10);

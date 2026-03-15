@@ -18,6 +18,7 @@ export function TopicCard({ topic }: TopicCardProps) {
         <h3>{topic.title}</h3>
         <p>{topic.summary}</p>
       </div>
+      <p className="subtle card-support">Simple mode, interview mode, example, pitfalls, and follow-ups are all inside this topic.</p>
       <div className="tag-row">
         {topic.tags.slice(0, 4).map((tag) => (
           <span key={tag} className="tag">

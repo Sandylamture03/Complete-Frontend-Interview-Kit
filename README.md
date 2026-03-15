@@ -2,6 +2,9 @@
 
 This is a learning app for React.js and frontend interview preparation.
 
+Live app:
+- https://prep.ai-developer.in/
+
 Think of it like one smart school bag:
 - all your study notes stay in one place
 - interview questions stay in one place
@@ -345,6 +348,9 @@ This app is your one-place React and frontend interview preparation system, made
 ## Deployment
 
 If you want to put this app on your own domain, read [DEPLOYMENT.md](./DEPLOYMENT.md).
+
+Current live deployment:
+- https://prep.ai-developer.in/
 
 That file explains:
 - production branch

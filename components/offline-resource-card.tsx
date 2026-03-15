@@ -9,7 +9,7 @@ type OfflineResourceCardProps = {
 
 export function OfflineResourceCard({ pack }: OfflineResourceCardProps) {
   return (
-    <article className="panel stack-sm">
+    <article className="panel stack-sm resource-card">
       <div className="pill-row">
         <span className="pill">{pack.group}</span>
         <span className="pill muted">{pack.category}</span>

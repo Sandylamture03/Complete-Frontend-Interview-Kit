@@ -547,4 +547,422 @@ export const authoredTopics: Topic[] = [
     ],
     relatedTopicIds: ["machine-coding", "system-design"],
   },
+  {
+    id: "browser-render-pipeline",
+    slug: "browser-render-pipeline-and-main-thread-thinking",
+    track: "browser",
+    difficulty: "3-6y",
+    title: "Browser Render Pipeline and Main Thread Thinking",
+    summary: "Explain parsing, style, layout, paint, compositing, and what makes the browser feel janky.",
+    simpleExplanation:
+      "The browser reads HTML and CSS, calculates sizes and positions, paints pixels, and finally shows the page. If we force too much work on the main thread, the page feels slow or jumpy.",
+    analogy:
+      "It is like setting up a classroom: first read the seating plan, then place desks, then paint the labels, and only then let students enter. If you keep moving desks while painting, everything becomes messy and slow.",
+    interviewAnswer:
+      "I explain browser work as parse, style calculation, layout, paint, and compositing. Performance problems often happen when JavaScript repeatedly reads layout-sensitive values and writes styles in a loop, causing extra reflow work. I connect that to main-thread availability, animation smoothness, and user-perceived responsiveness rather than only saying the pipeline names.",
+    codeSnippet: `const width = card.offsetWidth;\ncard.style.width = width + 24 + 'px';\n// Repeated layout reads and writes inside a loop can create layout thrashing.`,
+    pitfalls: [
+      "Memorizing pipeline words without connecting them to user-visible lag.",
+      "Reading layout and writing styles repeatedly in tight loops.",
+      "Assuming every animation should be JavaScript-driven.",
+    ],
+    tags: ["browser", "render-pipeline", "layout", "paint", "main-thread"],
+    oneMinuteAnswer: [
+      "The browser parses markup and styles first.",
+      "Layout decides sizes and positions.",
+      "Paint and compositing draw the final result.",
+      "Extra main-thread work directly hurts smoothness.",
+    ],
+    cheatSheet: [
+      "Parse, style, layout, paint, composite.",
+      "Avoid layout thrashing.",
+      "Measure first when animations feel janky.",
+      "Main-thread time is UX time.",
+    ],
+    sourceRefs: [
+      ref("performance-doc", "Web performance and security", "context/Web perfomance and security.docx"),
+      ref("frontend-questions", "HTML CSS JS questions", "context/100 important HTML, CSS, and JavaScript interview questions.pdf"),
+    ],
+    relatedTopicIds: ["dom-events", "performance-loading", "react-performance"],
+  },
+  {
+    id: "browser-storage-network",
+    slug: "browser-storage-caching-and-networking",
+    track: "browser",
+    difficulty: "3-6y",
+    title: "Browser Storage, Caching, and Networking",
+    summary: "Cover localStorage, sessionStorage, cookies, cache behavior, and request lifecycle tradeoffs.",
+    simpleExplanation:
+      "Browsers can remember data in different places. Each option has a purpose, a size limit, and a security or lifetime tradeoff.",
+    analogy:
+      "Think of browser storage like school storage spaces: a desk drawer for this class, a locker for your own items, and an office register for things that must travel with every form.",
+    interviewAnswer:
+      "I compare browser storage by scope, lifetime, and sensitivity. localStorage is easy but synchronous and inappropriate for sensitive secrets. sessionStorage is tab-scoped. Cookies are small, automatically sent with matching requests, and useful when server communication matters. I then connect this to caching headers, stale data, retry logic, and how frontend apps should avoid mixing persistence, cache, and auth concerns carelessly.",
+    codeSnippet: `localStorage.setItem('theme', 'dark');\nsessionStorage.setItem('draft-tab', 'billing');\ndocument.cookie = 'locale=en; Path=/; Secure; SameSite=Lax';`,
+    pitfalls: [
+      "Using localStorage for sensitive auth data without understanding risk.",
+      "Treating cookies and browser storage as interchangeable.",
+      "Ignoring cache invalidation and stale data behavior.",
+    ],
+    tags: ["browser", "storage", "cookies", "caching", "network"],
+    oneMinuteAnswer: [
+      "Choose storage by scope, lifetime, and security need.",
+      "Cookies are request-aware, localStorage is not.",
+      "Cache strategy matters for freshness and speed.",
+      "Persistence and auth should not be mixed blindly.",
+    ],
+    cheatSheet: [
+      "localStorage is persistent but synchronous.",
+      "sessionStorage is per-tab.",
+      "Cookies travel with requests.",
+      "Cache rules shape perceived speed.",
+    ],
+    sourceRefs: [
+      ref("js-questions", "JS interview preparation", "context/JS Interview Preparation Questions.docx"),
+      ref("performance-doc", "Web performance and security", "context/Web perfomance and security.docx"),
+    ],
+    relatedTopicIds: ["frontend-security", "system-design-realtime", "performance-loading"],
+  },
+  {
+    id: "accessibility-widgets",
+    slug: "accessible-widgets-dialogs-and-aria",
+    track: "accessibility",
+    difficulty: "3-6y",
+    title: "Accessible Widgets, Dialogs, and ARIA",
+    summary: "Go beyond basic semantics and explain modals, tabs, menus, announcements, and ARIA decisions clearly.",
+    simpleExplanation:
+      "Some UI pieces are more complex than buttons and forms. They still need keyboard support, focus control, and good screen-reader meaning.",
+    analogy:
+      "A school auditorium needs more than just a door. It also needs signs, guided seating, and clear rules so everyone can enter, move, and exit safely.",
+    interviewAnswer:
+      "For advanced accessibility questions I talk about focus management, keyboard interaction, visible state, and accessible names before I mention ARIA attributes. Native semantics come first. ARIA helps when building custom widgets like dialogs, tabs, or menus, but it should mirror the expected interaction pattern, not patch over broken markup. I also mention announcements for async updates and returning focus after modal close.",
+    codeSnippet: `<button aria-expanded={open} aria-controls="help-panel">Help</button>\n<section id="help-panel" hidden={!open}>\n  <h2>Keyboard tips</h2>\n</section>`,
+    pitfalls: [
+      "Using ARIA roles without matching keyboard behavior.",
+      "Opening dialogs without trapping or restoring focus.",
+      "Hiding important state changes from assistive technology.",
+    ],
+    tags: ["accessibility", "aria", "dialog", "focus-management", "widgets"],
+    oneMinuteAnswer: [
+      "Custom widgets need correct focus rules.",
+      "ARIA should support, not replace, semantics.",
+      "Keyboard behavior must match the pattern.",
+      "Async updates should be announced clearly.",
+    ],
+    cheatSheet: [
+      "Focus in, focus out, focus return.",
+      "Match ARIA to interaction.",
+      "Keep state names clear.",
+      "Test with keyboard first.",
+    ],
+    sourceRefs: [
+      ref("resources-goldmine", "Frontend resources gold mine", "context/Resources to learn Frontend (Gold Mine)- eBook .docx"),
+      ref("html-css-questions", "HTML CSS interview questions", "context/HTML CSS interview question.docx"),
+    ],
+    relatedTopicIds: ["accessibility-foundations", "testing", "dom-events"],
+  },
+  {
+    id: "performance-loading",
+    slug: "loading-strategy-caching-and-core-web-vitals",
+    track: "performance-security",
+    difficulty: "3-6y",
+    title: "Loading Strategy, Caching, and Core Web Vitals",
+    summary: "Answer LCP, CLS, INP, image strategy, caching, and bundle questions with product-level clarity.",
+    simpleExplanation:
+      "Fast apps load important content quickly, stay stable while loading, and respond without delay when the user interacts.",
+    analogy:
+      "A good shop opens the front door first, keeps the shelves from moving around, and serves the first customer quickly instead of making everyone wait for every room to be cleaned.",
+    interviewAnswer:
+      "I frame performance around what the user feels: how quickly the main content appears, whether the layout jumps, and how fast interactions respond. Then I connect that to concrete fixes like route splitting, image optimization, caching policy, preloading critical assets, reducing third-party script cost, and keeping the main thread free for interaction. I also distinguish static asset caching from API freshness strategies.",
+    codeSnippet: `const image = <img src={heroUrl} width={960} height={540} loading="eager" alt="Dashboard preview" />;\n// Use stable dimensions and prioritize only truly critical media.`,
+    pitfalls: [
+      "Reciting metric names without explaining user impact.",
+      "Preloading too many assets and hurting network priority.",
+      "Treating asset caching and API caching as the same problem.",
+    ],
+    tags: ["performance", "core-web-vitals", "caching", "loading", "bundle"],
+    oneMinuteAnswer: [
+      "LCP is about major content arriving quickly.",
+      "CLS is about layout staying stable.",
+      "INP is about responsive interactions.",
+      "Caching and priority decisions shape all three.",
+    ],
+    cheatSheet: [
+      "Prioritize critical content.",
+      "Keep dimensions stable.",
+      "Ship less JavaScript upfront.",
+      "Cache with freshness in mind.",
+    ],
+    sourceRefs: [
+      ref("performance-doc", "Web performance and security", "context/Web perfomance and security.docx"),
+      ref("resources-goldmine", "Frontend resources gold mine", "context/Resources to learn Frontend (Gold Mine)- eBook .docx"),
+    ],
+    relatedTopicIds: ["performance-security", "browser-render-pipeline", "system-design-realtime"],
+  },
+  {
+    id: "frontend-security",
+    slug: "frontend-security-auth-and-trust-boundaries",
+    track: "performance-security",
+    difficulty: "3-6y",
+    title: "Frontend Security, Auth, and Trust Boundaries",
+    summary: "Explain XSS, CSRF, token storage, CSP, sanitization, and what frontend can and cannot guarantee.",
+    simpleExplanation:
+      "Frontend code runs in the user's browser, so it should never trust unsafe input and should never pretend it can hide secrets perfectly.",
+    analogy:
+      "A classroom monitor can check who enters, but the master key should still stay in the office, not under the desk.",
+    interviewAnswer:
+      "I explain security by trust boundaries. The browser UI can reduce risk, but the client is not a trusted secret store. I discuss escaping dynamic content, sanitizing allowed HTML, understanding token tradeoffs, CSRF implications with cookies, CSP as defense in depth, and avoiding dangerous assumptions like hiding sensitive logic only in the frontend. I also separate authentication, authorization, and UI convenience concerns.",
+    codeSnippet: `function SafePreview({ html }: { html: string }) {\n  const safeHtml = DOMPurify.sanitize(html);\n  return <div dangerouslySetInnerHTML={{ __html: safeHtml }} />;\n}`,
+    pitfalls: [
+      "Storing secrets in the client and calling it secure.",
+      "Using dangerouslySetInnerHTML without sanitization.",
+      "Talking about auth and authorization as the same thing.",
+    ],
+    tags: ["security", "xss", "csrf", "tokens", "csp"],
+    oneMinuteAnswer: [
+      "Frontend should reduce risk, not invent trust.",
+      "Escape or sanitize untrusted content.",
+      "Token storage has tradeoffs, not magic answers.",
+      "Client checks help UX but server checks protect data.",
+    ],
+    cheatSheet: [
+      "Never trust raw HTML.",
+      "Know cookie versus token tradeoffs.",
+      "Use CSP as extra protection.",
+      "Server remains the source of truth.",
+    ],
+    sourceRefs: [
+      ref("performance-doc", "Web performance and security", "context/Web perfomance and security.docx"),
+      ref("frontend-questions", "HTML CSS JS questions", "context/100 important HTML, CSS, and JavaScript interview questions.pdf"),
+    ],
+    relatedTopicIds: ["performance-security", "browser-storage-network", "system-design"],
+  },
+  {
+    id: "frontend-design-systems",
+    slug: "component-libraries-and-design-system-workflow",
+    track: "frontend",
+    difficulty: "3-6y",
+    title: "Component Libraries and Design System Workflow",
+    summary: "Prepare for questions about reusable UI, tokens, API consistency, accessibility, and adoption across teams.",
+    simpleExplanation:
+      "A design system is a shared toolbox of styles and components so many teams can build faster without making every screen look different.",
+    analogy:
+      "Instead of each class bringing random chairs, the school uses one standard furniture system so every room stays familiar and easier to maintain.",
+    interviewAnswer:
+      "I describe a design system as shared primitives, tokens, accessibility rules, documentation, and team workflow, not only a component folder. I cover component API consistency, slot or composition patterns, versioning, migration strategy, designer-developer collaboration, and how to keep the library flexible without letting every product team fork the rules. I also mention measuring adoption and support cost.",
+    codeSnippet: `export const tokens = {\n  color: { surface: '#fff6ec', accent: '#ff6a3d' },\n  space: { sm: '0.5rem', md: '1rem', lg: '1.5rem' },\n};`,
+    pitfalls: [
+      "Treating a design system like only a UI kit.",
+      "Making component APIs inconsistent across similar controls.",
+      "Ignoring documentation, migration, and ownership.",
+    ],
+    tags: ["frontend", "design-system", "components", "tokens", "platform"],
+    oneMinuteAnswer: [
+      "Design systems are product workflow tools, not only code.",
+      "Tokens create consistency in spacing, color, and type.",
+      "Reusable components still need accessible APIs.",
+      "Ownership and adoption matter as much as implementation.",
+    ],
+    cheatSheet: [
+      "Tokens first, components second.",
+      "Document usage and edge cases.",
+      "Consistency beats one-off cleverness.",
+      "Measure adoption and maintenance cost.",
+    ],
+    sourceRefs: [
+      ref("resources-goldmine", "Frontend resources gold mine", "context/Resources to learn Frontend (Gold Mine)- eBook .docx"),
+      ref("html-css-questions", "HTML CSS interview questions", "context/HTML CSS interview question.docx"),
+    ],
+    relatedTopicIds: ["testing", "accessibility-widgets", "system-design-platform"],
+  },
+  {
+    id: "dsa-recursion",
+    slug: "trees-recursion-and-ui-data-transforms",
+    track: "dsa",
+    difficulty: "3-6y",
+    title: "Trees, Recursion, and UI Data Transforms",
+    summary: "Handle nested menus, comments, file explorers, flattening, and traversal questions like a frontend engineer.",
+    simpleExplanation:
+      "Frontend data is often nested, like comments inside comments or folders inside folders. Recursion and traversal help you move through that shape cleanly.",
+    analogy:
+      "It is like exploring rooms inside rooms in a building. You need a clear rule for when to go deeper and when to come back.",
+    interviewAnswer:
+      "I explain recursion as a clean way to solve repeated nested structure, but I also mention iterative versions when stack depth or clarity matters. In frontend interviews I connect it to trees like menus, nested comments, routing, file explorers, and transform pipelines. I talk through traversal order, base conditions, and how to keep the solution readable for UI-driven data rather than only algorithmic theory.",
+    codeSnippet: `function flattenLabels(nodes: { label: string; children?: { label: string; children?: any[] }[] }[]) {\n  return nodes.flatMap((node) => [node.label, ...(node.children ? flattenLabels(node.children) : [])]);\n}`,
+    pitfalls: [
+      "Forgetting the base condition in recursion.",
+      "Using recursion without explaining the shape of the data first.",
+      "Optimizing too early before the traversal logic is clear.",
+    ],
+    tags: ["dsa", "recursion", "trees", "traversal", "ui-data"],
+    oneMinuteAnswer: [
+      "Nested UI data often behaves like a tree.",
+      "Recursion is a readable fit when the data shape repeats.",
+      "Traversal order depends on the output you need.",
+      "Explain the base case before the recursive step.",
+    ],
+    cheatSheet: [
+      "Name the tree shape first.",
+      "Define the base case.",
+      "Describe what each call returns.",
+      "Consider iterative fallback if depth is risky.",
+    ],
+    sourceRefs: [
+      ref("dsa-doc", "DSA for frontend", "context/DSA for frontend.docx"),
+      ref("top-150-dsa", "Top 150 frontend DSA questions", "context/Top 150 DSA Questions for Frontend Developers - Geeky Frontend.pdf"),
+    ],
+    relatedTopicIds: ["dsa-patterns", "machine-coding-architecture", "system-design-realtime"],
+  },
+  {
+    id: "machine-coding-architecture",
+    slug: "machine-coding-component-boundaries-and-state",
+    track: "machine-coding",
+    difficulty: "3-6y",
+    title: "Machine Coding: Component Boundaries and State",
+    summary: "Prepare for the part of the round where structure, state shape, and communication matter more than typing speed.",
+    simpleExplanation:
+      "A machine coding round becomes easier when you split the app into simple parts and keep one clear owner for each important piece of data.",
+    analogy:
+      "If one student handles the chart, another handles the model, and another handles the labels, the project gets built faster than if one person holds every tool at once.",
+    interviewAnswer:
+      "Beyond requirement scoping, the next high-signal skill is choosing component boundaries and state ownership. I explain what should stay local, what needs a shared parent, how to keep updates predictable, and how to leave space for keyboard handling and testing. Interviewers usually reward clear structure and calm narration more than fancy patterns used too early.",
+    codeSnippet: `function TaskBoard() {\n  const [tasks, setTasks] = useState<Task[]>([]);\n  return <BoardLayout tasks={tasks} onToggle={(id) => setTasks((current) => current.map((task) => task.id === id ? { ...task, done: !task.done } : task))} />;\n}`,
+    pitfalls: [
+      "Creating one giant component with UI and logic mixed together.",
+      "Duplicating state in parent and child during rush time.",
+      "Skipping explanation of why a boundary was chosen.",
+    ],
+    tags: ["machine-coding", "state", "components", "architecture", "time-boxing"],
+    oneMinuteAnswer: [
+      "Choose state owners before polishing UI.",
+      "Split components by responsibility, not by random file count.",
+      "Keep updates predictable and easy to explain.",
+      "Leave room for keyboard and error states.",
+    ],
+    cheatSheet: [
+      "One source of truth per concern.",
+      "Prefer simple component contracts.",
+      "Narrate tradeoffs while coding.",
+      "Happy path first, structure close behind.",
+    ],
+    sourceRefs: [
+      ref("machine-coding-sheet", "Frontend machine coding cheat sheet", "context/Frontend Machine Coding Cheat Sheet.pdf"),
+      ref("mock-guide", "Frontend self mock guide", "context/Frontend Interview_ Topic-Wise Self Mock Interview Guide.docx"),
+    ],
+    relatedTopicIds: ["machine-coding", "dsa-recursion", "frontend-design-systems"],
+  },
+  {
+    id: "system-design-platform",
+    slug: "design-systems-and-frontend-platform-thinking",
+    track: "system-design",
+    difficulty: "3-6y",
+    title: "Design Systems and Frontend Platform Thinking",
+    summary: "Answer frontend system design questions about shared components, versioning, tokens, governance, and adoption.",
+    simpleExplanation:
+      "Frontend platform work means making life easier for many teams, not just one feature. Shared rules and tools help teams move faster with less confusion.",
+    analogy:
+      "It is like building a school library and timetable system so every class can work better, instead of helping only one classroom for one day.",
+    interviewAnswer:
+      "When asked about design systems or frontend platforms, I discuss primitives, tokens, accessibility guarantees, documentation, versioning, release strategy, and migration support. I also cover governance: who owns the system, how teams request new components, how breaking changes are handled, and how adoption is measured. This shows I understand that platform success depends on developer experience and product consistency, not only code reuse.",
+    codeSnippet: `type ButtonProps = {\n  variant: 'primary' | 'secondary';\n  size?: 'sm' | 'md' | 'lg';\n  children: React.ReactNode;\n};`,
+    pitfalls: [
+      "Talking about a design system like only a Figma file or npm package.",
+      "Ignoring versioning and migration planning.",
+      "Skipping accessibility guarantees in shared primitives.",
+    ],
+    tags: ["system-design", "design-system", "platform", "governance", "tokens"],
+    oneMinuteAnswer: [
+      "Platform work is about many teams, not one screen.",
+      "Shared primitives need strong APIs and documentation.",
+      "Versioning and migration strategy are design decisions too.",
+      "Accessibility should be built into the base layer.",
+    ],
+    cheatSheet: [
+      "Tokens, primitives, patterns, docs.",
+      "Ownership matters.",
+      "Migration cost matters.",
+      "Adoption is a success metric.",
+    ],
+    sourceRefs: [
+      ref("system-design-pdf", "Frontend system design guide", "context/Geeky Frontend_ The Ultimate Guide to Frontend System Design.pdf"),
+      ref("resources-goldmine", "Frontend resources gold mine", "context/Resources to learn Frontend (Gold Mine)- eBook .docx"),
+    ],
+    relatedTopicIds: ["system-design", "frontend-design-systems", "accessibility-widgets"],
+  },
+  {
+    id: "system-design-realtime",
+    slug: "realtime-dashboard-and-resilient-data-flow",
+    track: "system-design",
+    difficulty: "3-6y",
+    title: "Realtime Dashboards and Resilient Data Flow",
+    summary: "Prepare for questions about polling, websockets, partial failure, stale data, and resilient UI updates.",
+    simpleExplanation:
+      "Realtime screens are hard because the data keeps changing. The UI must stay useful even when some updates are slow, missing, or out of order.",
+    analogy:
+      "A school scoreboard must keep showing the latest result, but it should not go blank just because one volunteer is late with a score update.",
+    interviewAnswer:
+      "For realtime frontend design I cover the update model first: polling, websockets, SSE, or hybrid fallback. Then I explain cache boundaries, optimistic or stale UI states, reconnection strategy, event ordering, partial failure handling, and how the screen communicates freshness to the user. I also mention performance techniques like batching updates, virtualization, and keeping expensive charts from rerendering unnecessarily.",
+    codeSnippet: `type WidgetState = {\n  status: 'fresh' | 'stale' | 'reconnecting';\n  updatedAt: number;\n  data: number[];\n};`,
+    pitfalls: [
+      "Assuming realtime always means websockets.",
+      "Ignoring stale or partially failed widget states.",
+      "Updating every widget eagerly without render boundaries.",
+    ],
+    tags: ["system-design", "realtime", "dashboard", "polling", "resilience"],
+    oneMinuteAnswer: [
+      "Choose the update model based on product need.",
+      "Show freshness and failure states clearly.",
+      "Keep cache and rerender boundaries explicit.",
+      "Protect the UI when some data is stale.",
+    ],
+    cheatSheet: [
+      "Polling is acceptable when simple.",
+      "Realtime still needs fallback states.",
+      "Batch updates when possible.",
+      "Users need freshness signals.",
+    ],
+    sourceRefs: [
+      ref("system-design-pdf", "Frontend system design guide", "context/Geeky Frontend_ The Ultimate Guide to Frontend System Design.pdf"),
+      ref("performance-doc", "Performance and security notes", "context/Web perfomance and security.docx"),
+    ],
+    relatedTopicIds: ["system-design", "performance-loading", "browser-storage-network"],
+  },
+  {
+    id: "behavioral-ownership",
+    slug: "ownership-conflict-and-growth-stories",
+    track: "resume-behavioral",
+    difficulty: "3-6y",
+    title: "Ownership, Conflict, and Growth Stories",
+    summary: "Prepare for the behavioral questions that decide trust: disagreement, leadership, mistakes, and growth.",
+    simpleExplanation:
+      "Behavioral interviews check whether people can trust how you work with others, not only whether you can write code.",
+    analogy:
+      "It is like a class project review. The teacher wants to know not only if the poster looks good, but also whether you helped the team, solved problems, and learned from mistakes.",
+    interviewAnswer:
+      "For behavioral rounds I keep answers structured around context, tension, action, result, and learning. I make my ownership clear without pretending to have done everything alone. I talk openly about tradeoffs, disagreements, and mistakes because mature interviews reward reflection, honesty, and clear communication more than perfect stories.",
+    codeSnippet: `Story frame:\n1. Context\n2. Tension or conflict\n3. My action\n4. Result\n5. Learning`,
+    pitfalls: [
+      "Telling only polished success stories with no tension.",
+      "Speaking in vague team-only language without ownership.",
+      "Giving long stories before answering the actual question.",
+    ],
+    tags: ["behavioral", "ownership", "conflict", "growth", "leadership"],
+    oneMinuteAnswer: [
+      "Keep the story short, specific, and honest.",
+      "Name the conflict or tension clearly.",
+      "Explain your action and judgment.",
+      "Close with result and learning.",
+    ],
+    cheatSheet: [
+      "Context, tension, action, result, learning.",
+      "Use first person for ownership.",
+      "Do not hide the difficult part of the story.",
+      "Learning shows maturity.",
+    ],
+    sourceRefs: [
+      ref("resume-pdf", "Resume PDF", "SANDEEP_LAMTURE_-_React_ats_resume.pdf", "Manual profile onboarding is part of v1.", "manual"),
+      ref("cold-email-doc", "Cold email and outreach templates", "context/Cold Email Templates and How to cold email.docx"),
+    ],
+    relatedTopicIds: ["resume-storytelling", "system-design-platform", "machine-coding-architecture"],
+  },
 ];
