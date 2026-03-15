@@ -1,0 +1,55 @@
+{
+  "name": "complete-frontend-interview-kit",
+  "version": "1.0.0",
+  "description": "Local-first React and frontend interview preparation OS.",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run import:content && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "import:content": "node scripts/import-content.mjs",
+    "prepare:content": "npm run import:content",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "frontend",
+    "interview-prep"
+  ],
+  "author": "OpenAI Codex",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "fuse.js": "^7.1.0",
+    "idb": "^8.0.3",
+    "mammoth": "^1.12.0",
+    "next": "^16.1.6",
+    "pdf-parse": "^2.4.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.1.6",
+    "jsdom": "^27.2.0",
+    "playwright": "^1.56.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.8"
+  }
+}

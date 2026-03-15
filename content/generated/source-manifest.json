@@ -1,0 +1,319 @@
+[
+  {
+    "id": "context-100-important-html,-css,-and-javascript-interview-questions-pdf",
+    "name": "100 important HTML, CSS, and JavaScript interview questions.pdf",
+    "path": "context/100 important HTML, CSS, and JavaScript interview questions.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "html-css",
+    "importStatus": "parsed",
+    "charCount": 6337,
+    "extractedPreview": "HTML Interview Questions 1. What is HTML? 2. What does DOCTYPE mean in HTML? 3. Explain the purpose of the <meta> tag. 4. What is the difference between HTML and XHTML? 5. What is semantic HTML? 6. Describe the difference between <div> and <span>. 7. Explain t",
+    "questionCount": 98,
+    "highlights": [
+      "What does DOCTYPE mean in HTML?",
+      "Explain the purpose of the <meta> tag.",
+      "What is the difference between HTML and XHTML?",
+      "What is semantic HTML?"
+    ]
+  },
+  {
+    "id": "context-100-react-interview-questions-pdf",
+    "name": "100-React-interview-questions.pdf",
+    "path": "context/100-React-interview-questions.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "react",
+    "importStatus": "parsed",
+    "charCount": 629,
+    "extractedPreview": "1 -- 1 of 36 -- 2 -- 2 of 36 -- 3 -- 3 of 36 -- 4 -- 4 of 36 -- 5 -- 5 of 36 -- 6 -- 6 of 36 -- 7 -- 7 of 36 -- 8 -- 8 of 36 -- 9 -- 9 of 36 -- 10 -- 10 of 36 -- 11 -- 11 of 36 -- 12 -- 12 of 36 -- 13 -- 13 of 36 -- 14 -- 14 of 36 -- 15 -- 15 of 36 -- 16 -- 16",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-400--js-interview-questions-pdf",
+    "name": "400- JS Interview Questions.pdf",
+    "path": "context/400- JS Interview Questions.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "javascript",
+    "importStatus": "parsed",
+    "charCount": 255595,
+    "extractedPreview": "26/4/2021 md2pdf - Markdown to PDF https://md2pdf.netlify.app 1/176 Hello World! Today I prepared a huge list of Javascript Interview Questions from this awesome repo, their really cool and have lots of this kind of resources. ⚡ Giveaway ⚡ We are giving away a",
+    "questionCount": 416,
+    "highlights": [
+      "What is JS (Javascript)",
+      "What it used for?",
+      "420 What is the difference between isNaN and Number.isNaN?",
+      "421 How to invoke an IIFE without any extra brackets?"
+    ]
+  },
+  {
+    "id": "context-8020-javascript-3-0-pdf",
+    "name": "8020-JavaScript-3.0.pdf",
+    "path": "context/8020-JavaScript-3.0.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "javascript",
+    "importStatus": "parsed",
+    "charCount": 60406,
+    "extractedPreview": "1 -- 1 of 84 -- 2 Table Of Content. Introduction to JavaScript 6 Paradigm 6 Primitive DataTypes 6 Variables and Scoping 7 Truthy and Falsy values in JavaScript 10 Truthy and Falsy values 10 The only 6 falsy values 11 Copy by value vs copy by reference 12 Copy ",
+    "questionCount": 18,
+    "highlights": [
+      "What is a module? 33",
+      "How JS works behind the scene - Execution Context and CallStack. 41",
+      "What is an algorithm and why to care? 57",
+      "Describe both what and how."
+    ]
+  },
+  {
+    "id": "context-cold-email-templates-and-how-to-cold-email-docx",
+    "name": "Cold Email Templates and How to cold email.docx",
+    "path": "context/Cold Email Templates and How to cold email.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "resume-behavioral",
+    "importStatus": "parsed",
+    "charCount": 5530,
+    "extractedPreview": "Cold Email Templates and How to cold email Template 1: The Mutual Value Approach (Best for Tech Roles) Subject: Quick question about [Company]'s frontend challenges Hi [First Name], Noticed [Company] just [launched feature/raised funding/expanded team] - excit",
+    "questionCount": 2,
+    "highlights": [
+      "Free next Tuesday or Thursday afternoon?",
+      "Worth a quick 10-minute call to discuss how I could help [Company] tackle similar challenges?"
+    ]
+  },
+  {
+    "id": "context-dsa-for-frontend-docx",
+    "name": "DSA for frontend.docx",
+    "path": "context/DSA for frontend.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "dsa",
+    "importStatus": "parsed",
+    "charCount": 91249,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-frontend-interview_-topic-wise-self-mock-interview-guide-docx",
+    "name": "Frontend Interview_ Topic-Wise Self Mock Interview Guide.docx",
+    "path": "context/Frontend Interview_ Topic-Wise Self Mock Interview Guide.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "frontend",
+    "importStatus": "parsed",
+    "charCount": 13742,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 163,
+    "highlights": [
+      "What are closures, and how do they work in JavaScript?",
+      "Can you explain hoisting and how it affects variables and functions?",
+      "Describe the different types of scopes in JavaScript: global, function, and block.",
+      "What is the execution context, and how does the call stack work in JavaScript?"
+    ]
+  },
+  {
+    "id": "context-frontend-machine-coding-cheat-sheet-pdf",
+    "name": "Frontend Machine Coding Cheat Sheet.pdf",
+    "path": "context/Frontend Machine Coding Cheat Sheet.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "machine-coding",
+    "importStatus": "parsed",
+    "charCount": 17068,
+    "extractedPreview": "Frontend Machine Coding Interview: Cheat Sheet by Geeky Frontend Machine coding interviews are a must in all tech companies hiring for frontend/UI roles at any level. There are plenty of machine coding questions out there that can become part of the frontend i",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-geeky-frontend_-the-ultimate-guide-to-frontend-system-design-pdf",
+    "name": "Geeky Frontend_ The Ultimate Guide to Frontend System Design.pdf",
+    "path": "context/Geeky Frontend_ The Ultimate Guide to Frontend System Design.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "system-design",
+    "importStatus": "parsed",
+    "charCount": 13129,
+    "extractedPreview": "Geeky Frontend: The Ultimate Guide to Frontend System Design COPYRIGHT NOTICE: ©All content is the exclusive property of Ankit Nagar (@geeky_frontend). Unauthorized use or distribution is strictly prohibited. Introduction: Beyond Coding, Towards Architecture T",
+    "questionCount": 5,
+    "highlights": [
+      "request and response look like? Is it REST or GraphQL?",
+      "How will you manage state in the application? The choice here has huge implications for",
+      "How will your design handle growth and challenges?",
+      "Security: How do you prevent XSS? What about data validation?"
+    ]
+  },
+  {
+    "id": "context-html-css-interview-question-docx",
+    "name": "HTML CSS interview question.docx",
+    "path": "context/HTML CSS interview question.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "html-css",
+    "importStatus": "parsed",
+    "charCount": 20015,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 20,
+    "highlights": [
+      "What are new tags in media elements in HTML5?",
+      "What are the new Form input elements in HTML5?",
+      "Explain the concept of web storage of HTML5?",
+      "Explain Geolocation API in HTML5"
+    ]
+  },
+  {
+    "id": "context-js-and-react-patterns-and-solid-principles-docx",
+    "name": "JS and React Patterns and Solid principles.docx",
+    "path": "context/JS and React Patterns and Solid principles.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "react",
+    "importStatus": "parsed",
+    "charCount": 20249,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 2,
+    "highlights": [
+      "When a class cannot determine the subclass it must instantiate.",
+      "Explain Solid principles"
+    ]
+  },
+  {
+    "id": "context-js-interview-preparation-questions-docx",
+    "name": "JS Interview Preparation Questions.docx",
+    "path": "context/JS Interview Preparation Questions.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "javascript",
+    "importStatus": "parsed",
+    "charCount": 50407,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 35,
+    "highlights": [
+      "what is closure",
+      "what is function binding,call,apply",
+      "what is prototypal inheritance",
+      "what is event bubbling and event delegation"
+    ]
+  },
+  {
+    "id": "context-react-interview-questions--ebook-docx",
+    "name": "React interview questions- Ebook.docx",
+    "path": "context/React interview questions- Ebook.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "react",
+    "importStatus": "parsed",
+    "charCount": 36429,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 24,
+    "highlights": [
+      "What are the different lifecycle methods in React?",
+      "What is the distinction between virtual DOM and real DOM, and how does the virtual DOM function?",
+      "Why is it important to use keys in lists?",
+      "What are the different types of components in React?"
+    ]
+  },
+  {
+    "id": "context-react-handwritten-notes-pdf",
+    "name": "React-Handwritten-notes.pdf",
+    "path": "context/React-Handwritten-notes.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "react",
+    "importStatus": "parsed",
+    "charCount": 1365,
+    "extractedPreview": "React.Js HANDWRITTEN NOTES Prepared By: -- 1 of 89 -- -- 2 of 89 -- -- 3 of 89 -- -- 4 of 89 -- -- 5 of 89 -- -- 6 of 89 -- -- 7 of 89 -- -- 8 of 89 -- -- 9 of 89 -- -- 10 of 89 -- -- 11 of 89 -- -- 12 of 89 -- -- 13 of 89 -- -- 14 of 89 -- -- 15 of 89 -- -- 1",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-reactjs-questions-and-answers-pdf",
+    "name": "ReactJS-Questions-and-answers.pdf",
+    "path": "context/ReactJS-Questions-and-answers.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "react",
+    "importStatus": "parsed",
+    "charCount": 39786,
+    "extractedPreview": "Top 70 ReactJS Interview Questions and Answers PDF ReactJS Interview Questions and Answers for Freshers 1. What is ReactJS? ReactJS is an open-source, component-based front-end JavaScript library essential for the view layer of the application. It is supported",
+    "questionCount": 62,
+    "highlights": [
+      "What is ReactJS?",
+      "What are the benefits of ReactJS?",
+      "When we are about to build a web application with high customer connection and view",
+      "When we compose a React element, we do not correspond precisely to the DOM."
+    ]
+  },
+  {
+    "id": "context-resources-to-learn-frontend-(gold-mine)--ebook-docx",
+    "name": "Resources to learn Frontend (Gold Mine)- eBook .docx",
+    "path": "context/Resources to learn Frontend (Gold Mine)- eBook .docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "frontend",
+    "importStatus": "parsed",
+    "charCount": 6160,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 1,
+    "highlights": [
+      "How Browser works https://www.youtube.com/watch?v=0IsQqJ7pwhw"
+    ]
+  },
+  {
+    "id": "context-top-150-dsa-questions-for-frontend-developers---geeky-frontend-pdf",
+    "name": "Top 150 DSA Questions for Frontend Developers - Geeky Frontend.pdf",
+    "path": "context/Top 150 DSA Questions for Frontend Developers - Geeky Frontend.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "dsa",
+    "importStatus": "parsed",
+    "charCount": 7886,
+    "extractedPreview": "Easy Problems Medium Problems Hard Problems Top 150 DSA Questions for Top 150 DSA Questions for Frontend FrontendMaster Data Structures & Algorithms for Frontend Interviewsby Geeky Frontend -- 1 of 12 -- EASY Foundation Problems (1-50) 1. Two Sum Amazon Solve ",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-tricky-js-questions-docx",
+    "name": "Tricky JS  Questions.docx",
+    "path": "context/Tricky JS  Questions.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "javascript",
+    "importStatus": "parsed",
+    "charCount": 6609,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 0,
+    "highlights": []
+  },
+  {
+    "id": "context-web-perfomance-and-security-docx",
+    "name": "Web perfomance and security.docx",
+    "path": "context/Web perfomance and security.docx",
+    "extension": ".docx",
+    "category": "document",
+    "trackHint": "performance-security",
+    "importStatus": "parsed",
+    "charCount": 24018,
+    "extractedPreview": "©All content, materials, and intellectual property contained within this document, including but not limited to text, images, diagrams, graphics, code, and any other original works, are protected by copyright laws and international treaties. This intellectual ",
+    "questionCount": 3,
+    "highlights": [
+      "Explain web Vitals and how to imporve? Or What are Web Vitals (LCP, FID, CLS)?",
+      "How it's measured:",
+      "Explain pillars of web security ?"
+    ]
+  },
+  {
+    "id": "sandeep_lamture_-_react_ats_resume-pdf",
+    "name": "SANDEEP_LAMTURE_-_React_ats_resume.pdf",
+    "path": "SANDEEP_LAMTURE_-_React_ats_resume.pdf",
+    "extension": ".pdf",
+    "category": "ebook",
+    "trackHint": "react",
+    "importStatus": "manual-only",
+    "charCount": 4428,
+    "extractedPreview": "SANDEEP LAMTURE Pune, Maharashtra, India | sandylamture03@gmail.com | 9503250303 Profile A dynamic React Developer with 4 years of experience, known for pioneering user interface innovations and boosting team performance through modern development methods. Hig",
+    "questionCount": 0,
+    "highlights": []
+  }
+]
